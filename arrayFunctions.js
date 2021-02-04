@@ -9,9 +9,12 @@
  * getOdds([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [11, 35, 601, 777, 999]
  */
 function getOdds(numbers) {
-  // Your code here
+  const newArray = numbers.filter((number)=> {
+    return (number%2==1)
+  
+  })
+  return newArray;
 }
-
 /**
  * getEvens(numbers):
  * - receives an array of numbers called `numbers`
@@ -23,8 +26,13 @@ function getOdds(numbers) {
  * getEvens([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [52, 14, 56, 888]
  */
 function getEvens(numbers) {
-  // Your code here
-}
+  const newArray = numbers.filter((number)=> {
+    return (number%2==0)
+  
+  })
+  return newArray;
+}// Your code here
+
 
 /**
  * countOccurences(x, numbers):
@@ -36,8 +44,13 @@ function getEvens(numbers) {
  * countOccurences(52, [11, 35, 52, 14, 56, 601, 52, 777, 888, 999, 52]) -> 3
  */
 function countOccurences(x, numbers) {
-  // Your code here
-}
+
+  let count =0;
+  numbers.forEach((num)=>{
+    if (num===x) count++;
+  });
+ return count;
+  }
 
 /**
  * makeThemDoctors(students):
@@ -49,7 +62,16 @@ function countOccurences(x, numbers) {
  */
 
 function makeThemDoctors(students) {
-  // Your code here
+
+  let newDoctors = students.map((dr)=> {
+    return `Dr. ${dr}`;
+  }
+ )
+return newDoctors;
 }
+
+// Your code here
+
+
 
 module.exports = { getOdds, getEvens, countOccurences, makeThemDoctors };
